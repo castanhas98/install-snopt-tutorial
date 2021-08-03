@@ -1,0 +1,10 @@
+name: snopt-pagmo-env
+channels:
+  - conda-forge
+  - tudat-team
+dependencies:
+  - pagmo-devel
+  - pygmo_plugins_nonfree
+  - tudat
+  - eigen
+  - boost-cpp=1.72
