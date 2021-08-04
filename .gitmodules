@@ -1,0 +1,3 @@
+[submodule "snopt-interface"]
+	path = snopt-interface
+	url = git://github.com/snopt/snopt-interface
