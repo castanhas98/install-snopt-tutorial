@@ -20,7 +20,7 @@ Some thoughts:
 
 1. Request a "Non-U.S.-based" 3-month trial license for SNOPT7 from https://ccom.ucsd.edu/~optimizers/downloads/. The license should be requested for Linux and should have the Fortran libraries.
 
-![Asking for a License]()./screenshots/snopt_ask_license.png)
+![Asking for a License](./screenshots/snopt_ask_license.png)
 
 ## This `git` repository
 (Very much inspired by https://github.com/tudat-team/tudat-bundle)
