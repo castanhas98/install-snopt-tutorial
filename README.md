@@ -1,6 +1,6 @@
 # How to install SNOPT
 
-Tested on a fresh Ubuntu 20.04 installation with `miniconda` for Python 3.9
+Yet to be tested on a fresh Ubuntu 20.04 installation with `miniconda` for Python 3.9.
 
 Some requirements:
 - A trial version license from https://ccom.ucsd.edu/~optimizers/downloads/
@@ -13,12 +13,14 @@ Some requirements:
 
 
 Some thoughts:
--  Add the path with libsnopt7.so to LD_LIBRARY_PATH or to /etc/ld.so.conf.d/ create a file like snopt.conf and write the directory there. Path to directory with file, not path to file
+-  Add the path with libsnopt7.so to LD_LIBRARY_PATH or to /etc/ld.so.conf.d/ create a file like snopt.conf and write the directory there. Path to directory with file, not path to file. Absolute paths from root /, not from ~
 - Add SNOPT_LICENSE to /etc/environment
 
 ## SNOPT
 
 1. Request a "Non-U.S.-based" 3-month trial license for SNOPT7 from https://ccom.ucsd.edu/~optimizers/downloads/. The license should be requested for Linux and should have the Fortran libraries.
+
+![Asking for a License]()./screenshots/snopt_ask_license.png)
 
 ## This `git` repository
 (Very much inspired by https://github.com/tudat-team/tudat-bundle)

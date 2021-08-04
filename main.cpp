@@ -15,7 +15,7 @@ int main()
     
     // // 2 - Instantiate a pagmo_plugins_nonfree algorithm, in this case SNOPT. This assumes a library libsnopt7_c.so is
     // // found in the path "/usr/local/lib/". Otherwise you will get a runtime error.
-    // algorithm algo(ppnf::snopt7(true, "/home/francisco/Documents/Thesis/SNOPT/snopt-interface/lib/libsnopt7_c.so", 7u));
+    // algorithm algo(ppnf::snopt7(true, "/home/francisco/Documents/Thesis/SNOPT/snopt-interface/lib/libsnopt7_c.so", 4u));
 
     // population pop( prob, 1, 0 );
     // std::cout << pop << std::endl;
@@ -30,8 +30,8 @@ int main()
 
     // 2 - Instantiate a pagmo_plugins_nonfree algorithm, in this case SNOPT. This assumes a library libsnopt7_c.so is
     // found in the path "/usr/local/lib/". Otherwise you will get a runtime error.
-    algorithm algo(ppnf::snopt7(true, "/home/francisco/Documents/Thesis/SNOPT/snopt-interface/lib/libsnopt7_c.so"));
-
+    // Can be a relative path.
+    algorithm algo(ppnf::snopt7(true, "/home/francisco/Documents/Thesis/SNOPT/snopt-interface/lib/libsnopt7_c.so", 6u));
     // 3 - Instantiate an archipelago with 16 islands having each 1 individual (the initial guess)
     archipelago archi{16, algo, prob, 1};
     
