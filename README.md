@@ -78,7 +78,7 @@ make snopt_c
 make install snopt_c
 ```
 
-### 6. Add the libraries to LD_LIBRARY_PATH.
+### 8. Add the libraries to LD_LIBRARY_PATH.
 
 For a temporary addition, that exists while the current terminal exists and that needs to be ran every time a new terminal is opened:
 ```
@@ -98,11 +98,11 @@ sudo ldconfig
 ```
 to update the system with the new libraries.
 
-### 7. Setting up the License.
+### 9. Setting up the License.
 
 The `snopt7.lic` file that is sent in the email must be saved somewhere in the computer. Assuming that it is saved under `/install-snopt-tutorial`:
 ```
-cd ..                                           # to get back to the /install-snopt-tutorial directory
+cd ..         # to get back to the /install-snopt-tutorial directory
 export SNOPT_LICENSE=`realpath ./snopt7.lic`
 ```
 
@@ -114,7 +114,7 @@ and add a new line to the file with the following:
 ```
 SNOPT_LICENSE="/absolute/path/to/snopt7.lic"
 ```
-where `/absolute/path/to/snopt7.lic` is the absolute path to the `snopt7.lic` file. Again,  <kbd>Ctrl</kbd> + <kbd>X</kbd>, <kbd>Y</kbd>, <kbd>Enter</kbd> to save and exit. The computer should be restarted after this step.
+where `/absolute/path/to/snopt7.lic` is the absolute path to the `snopt7.lic` file. Again,  <kbd>Ctrl</kbd> + <kbd>X</kbd>, <kbd>Y</kbd>, <kbd>Enter</kbd> to save and exit. **The computer should be restarted after this step.**
 
 
 7. 
