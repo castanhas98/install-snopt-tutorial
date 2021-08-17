@@ -169,7 +169,7 @@ Which outputs:
 
 ```
 
-Example 2 (using Tudat):
+Example 2:
 ```
 ./build/example_2
 ```
@@ -178,7 +178,9 @@ Which outputs:
 
 ```
 
-Example 3:
+Example 2 is very similar to the code provided in https://esa.github.io/pagmo_plugins_nonfree/quickstart.html. It must be said that that example performs the evolution in a `pagmo::archipelago` instead of in a `pagmo::population` as it is done in examples 1 and 3.
+
+Example 3 (using Tudat):
 ```
 ./build/example_3
 ```
@@ -187,7 +189,7 @@ Which outputs:
 
 ```
 
-Example 3 is very similar to the code provided in https://esa.github.io/pagmo_plugins_nonfree/quickstart.html. It must be said that that example performs the evolution in a `pagmo::archipelago` instead of in a `pagmo::population` as it is done in examples 1 and 2.
+
 
 
 
