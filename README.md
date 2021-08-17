@@ -164,19 +164,143 @@ Example 1:
 ```
 ./build/example_1
 ```
-Which outputs:
-```
+<details open>
+<summary>Which outputs:</summary>
 
 ```
+(snopt-pagmo-env) $ ./build/example_1
+Initial Population:
+Problem name: Multidimensional Rosenbrock Function
+        C++ class name: pagmo::rosenbrock
+
+        Global dimension:                       30
+        Integer dimension:                      0
+        Fitness dimension:                      1
+        Number of objectives:                   1
+        Equality constraints dimension:         0start
+        Upper bounds: [10, 10, 10, 10, 10, ... ]
+        Has batch fitness evaluation: false
+
+        Has gradient: true
+        User implemented gradient sparsity: false
+        Expected gradients: 30
+        Has hessians: false
+        User implemented hessians sparsity: false
+
+        Fitness evaluations: 1
+        Gradient evaluations: 0
+
+        Thread safety: constant
+
+Population size: 1
+
+List of individuals: 
+#0:
+        ID:                     4880189657833503230
+        Decision vector:        [3.89267, 7.66399, 7.86918, 7.70878, 4.35346, ... ]
+        Fitness vector:         [3.34052e+06]
+
+Champion decision vector: [3.89267, 7.66399, 7.86918, 7.70878, 4.35346, ... ]
+Champion fitness: [3.34052e+06]
+
+Final Population:
+Problem name: Multidimensional Rosenbrock Function
+        C++ class name: pagmo::rosenbrock
+
+        Global dimension:                       30
+        Integer dimension:                      0
+        Fitness dimension:                      1
+        Number of objectives:                   1
+        Equality constraints dimension:         0
+        Inequality constraints dimension:       0
+        Lower bounds: [-5, -5, -5, -5, -5, ... ]
+        Upper bounds: [10, 10, 10, 10, 10, ... ]
+        Has batch fitness evaluation: false
+
+        Has gradient: true
+        User implemented gradient sparsity: false
+        Expected gradients: 30
+        Has hessians: false
+        User implemented hessians sparsity: false
+
+        Fitness evaluations: 1
+        Gradient evaluations: 0
+
+        Thread safety: constant
+
+Population size: 1
+
+List of individuals: 
+#0:
+        ID:                     4880189657833503230
+        Decision vector:        [1, 1, 1, 1, 1, ... ]
+        Fitness vector:         [1.08934e-16]
+
+Champion decision vector: [1, 1, 1, 1, 1, ... ]
+Champion fitness: [1.08934e-16]
+
+```
+</details>
+
+<br/><br/>
 
 Example 2:
 ```
 ./build/example_2
 ```
-Which outputs:
-```
+<details open>
+<summary>Which outputs:</summary>
+
+It probably will not give exactly the same output since the seed used to generate the population of each island is not set. It is important, however, that the final archipelago displays fitness function values much lower than the original ones.
 
 ```
+(snopt-pagmo-env) $ ./build/example_2
+[4.18693e+06]
+[5.87389e+06]
+[4.50279e+06]
+[4.19484e+06]
+[2.43854e+06]
+[4.16832e+06]
+[2.76975e+06]
+[3.65566e+06]
+[4.08998e+06]
+[2.6937e+06]
+[2.23983e+06]
+[3.26988e+06]
+[5.35522e+06]
+[4.2625e+06]
+[1.37748e+06]
+[4.33746e+06]
+
+Fitness function values after the optimization:
+[4.18693e+06]
+[3.98662]
+[5.61898e-15]
+[4.2837e-15]
+[3.98662]
+[3.12364e-15]
+[2.84757e-15]
+[4.30476e-17]
+[8.93509e-16]
+[1.97794e-15]
+[1.65367e-14]
+[1.85848e-16]
+[3.98662]
+[8.02854e-16]
+[1.95138e-16]
+[1.88996e-15]
+```
+</details>
+
+<br/><br/>
+
+Sometimes, the following error appears:
+```
+At line 71 of file src/sn01tri.f (unit = 10, file = 'fort.10')
+Fortran runtime error: End of file
+Segmentation fault (core dumped)
+```
+Which is believed to be from `pagmo`'s or SNOPT's side, but further troubleshooting needs to be done. However, running the executable again until it works seems to be a decent impromptu workaround.
 
 Example 2 is very similar to the code provided in https://esa.github.io/pagmo_plugins_nonfree/quickstart.html. It must be said that that example performs the evolution in a `pagmo::archipelago` instead of in a `pagmo::population` as it is done in examples 1 and 3.
 
@@ -184,11 +308,15 @@ Example 3 (using Tudat):
 ```
 ./build/example_3
 ```
-Which outputs:
-```
+<details open>
+<summary>Which outputs:</summary>
+
+```bash
+(snopt-pagmo-env) $ ./build/example_3
 
 ```
-
+</details>
+<br/><br/>
 
 
 
