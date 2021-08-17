@@ -111,11 +111,11 @@ SNOPT_LICENSE="/absolute/path/to/snopt7.lic"
 where `/absolute/path/to/snopt7.lic` is the absolute path to the `snopt7.lic` file. Again,  <kbd>Ctrl</kbd> + <kbd>X</kbd>, <kbd>Y</kbd>, <kbd>Enter</kbd> to save and exit. **The computer should be restarted after this step.**
 
 
-### 10. 
+### 10. Install libgfortran4
 ```
 sudo apt-get install libgfortran4
 ```
-if not found
+In case libgfortran4 is not found, run the following commands:
 ```
 sudo add-apt-repository universe
 sudo apt-get update
@@ -147,13 +147,16 @@ to
 algorithm algo(ppnf::snopt7(false, "/absolute/path/to/install-snopt-tutorial/snopt-interface/lib/libsnopt7_c.so", 6u));
 ```
 
-where `/absolute/path/to/install-snopt-tutorial/snopt-interface/lib/libsnopt7_c.so` is to the absolute path to the `libsnopt7_c.so` file.
+where `/absolute/path/to/install-snopt-tutorial/snopt-interface/lib/libsnopt7_c.so` is the absolute path to the `libsnopt7_c.so` file.
 
 ### 13. Build the examples.
+This step requires CMake to be installed. It can be downloaded from https://cmake.org/download/ and installed by following the instructions under "Latest Release" in the website.
+
 Inside `/install-snopt-tutorial`, run:
 ```
 bash build.sh
 ```
+
 
 ### 14. Run the examples.
 
