@@ -1,5 +1,7 @@
 # How to install SNOPT for optimization with pagmo
 
+https://esa.github.io/pagmo_plugins_nonfree/cpp_snopt7.html
+
 This repository is a tutorial on how to install and run SNOPT for optimization using pagmo (https://github.com/esa/pagmo2). A `conda` environment is used to install both   `pagmo` and `pagmo_plugins_nonfree` (https://github.com/esa/pagmo_plugins_nonfree).
 
 Works with Ubuntu 20.04 and `miniconda` for Python 3.9 but is yet to be tested on a fresh installation of the operating system.
