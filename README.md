@@ -58,7 +58,7 @@ This is normal and will be solved in the coming steps. The command needs to be r
 
 ### 6. Download the Fortran libraries from the link provided in the email with the license. 
 
-Some amount of time after requesting the license, an email will be sent to the registered email address. That email will contain both the license (`snopt7.lic`) and a link to the downloads, which look like http://ccom.ucsd.edu/~optimizers/downloads/software/academic?id=XXXXXXXXXXXX. The "Fortran (only) Libraries" are the ones that should be downloaded.
+Some amount of time after requesting the license, an email will be sent to the registered email address. That email will contain both the license (`snopt7.lic`) and a link to the downloads, which looks like http://ccom.ucsd.edu/~optimizers/downloads/software/academic?id=XXXXXXXXXXXX. The "Fortran (only) Libraries" are the ones that should be downloaded.
 
 ![Download Page](./screenshots/fortran_library_download.png)
 
@@ -122,16 +122,69 @@ sudo apt-get update
 sudo apt-get install libgfortran4
 ```
 
-### 11.
-Change the main.cpp file.
+## Running SNOPT with `pagmo`
 
-8. Add path to the license to SNOPT_LICENSE
+After the steps above are taken, one can create the `conda` environment in which `pagmo` and `tudat` will be installed.
 
-## Setting up the `conda` environment
+### 11. Installing and activating the environment through the `environment.yaml` file.
 
+Assuming the current directory is `/install-snopt-tutorial`:
+```
+conda env create -f environment.yaml
+conda activate snopt-pagmo-env
+```
 
+### 12. Verify the `.cpp` file.
 
+When using `snopt7` as a `pagmo::algorithm`, the path (absolute or relative) to the C library (the `libsnopt7_c.so` file under `/install-snopt-tutorial-snopt-interface/lib`) that was built in Step 7 must be present when the `pagmo::algorithm` is declared.
 
+Even though the examples work as they are, it is advised to change the lines of the `.cpp` files in the repository that look like the one below
+```cpp
+algorithm algo(ppnf::snopt7(false, "./snopt-interface/lib/libsnopt7_c.so", 6u));
+```
+to
+```cpp
+algorithm algo(ppnf::snopt7(false, "/absolute/path/to/install-snopt-tutorial/snopt-interface/lib/libsnopt7_c.so", 6u));
+```
+
+where `/absolute/path/to/install-snopt-tutorial/snopt-interface/lib/libsnopt7_c.so` is to the absolute path to the `libsnopt7_c.so` file.
+
+### 13. Build the examples.
+Inside `/install-snopt-tutorial`, run:
+```
+bash build.sh
+```
+
+### 14. Run the examples.
+
+Example 1:
+```
+./build/example_1
+```
+Which outputs:
+```
+
+```
+
+Example 2 (using Tudat):
+```
+./build/example_2
+```
+Which outputs:
+```
+
+```
+
+Example 3:
+```
+./build/example_3
+```
+Which outputs:
+```
+
+```
+
+Example 3 is very similar to the code provided in https://esa.github.io/pagmo_plugins_nonfree/quickstart.html. It must be said that that example performs the evolution in a `pagmo::archipelago` instead of in a `pagmo::population` as it is done in examples 1 and 2.
 
 
 
