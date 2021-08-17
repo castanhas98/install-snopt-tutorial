@@ -21,7 +21,7 @@ int main( )
     // 2 - Instantiate a pagmo_plugins_nonfree algorithm, in this case SNOPT. This assumes a library libsnopt7_c.so is
     // found in the path "/usr/local/lib/". Otherwise you will get a runtime error.
     // Default values -> ppnf::snopt7(bool screen_output = false, std::string snopt7_c_library = "/usr/local/lib/libsnopt7_c.so", unsigned minor_version = 6u);
-    algorithm algo(ppnf::snopt7(false, "./snopt-interface/lib/libsnopt7_c.so", 6u));
+    algorithm algo(ppnf::snopt7(true, "./snopt-interface/lib/libsnopt7_c.so", 6u));
 
     // 3 - Instantiate a population with a single individual and random_seed = 0.
     population pop( prob, 1, 0 );
