@@ -6,20 +6,6 @@ Works with Ubuntu 20.04 and `miniconda` for Python 3.9 but is yet to be tested o
 
 (Very much inspired by https://github.com/tudat-team/tudat-bundle)
 
-Some requirements:
-- A trial version license from https://ccom.ucsd.edu/~optimizers/downloads/
-- `anaconda` or `miniconda`
-- `git`
-- `autoconf`, `build-essential` and `libtool` packages
-- g++ (pre-installed with Ubuntu 20.04)
-- A Fortran compiler, we used gfortran
-- `cmake`
-
-
-Some thoughts:
--  Add the path with libsnopt7.so to LD_LIBRARY_PATH or to /etc/ld.so.conf.d/ create a file like snopt.conf and write the directory there. Path to directory with file, not path to file. Absolute paths from root /, not from ~
-- Add SNOPT_LICENSE to /etc/environment
-
 ## SNOPT
 
 ### 1. Request a "Non-U.S.-based" 3-month trial license for SNOPT7 from https://ccom.ucsd.edu/~optimizers/downloads/. 
@@ -57,9 +43,18 @@ sudo apt-get install autoconf build-essential libtool gfortran
 
 ```
 cd snopt-interface
-./autogen
+./autogen.sh
 ./configure
+make snopt_c
 ```
+
+After the last command, an error similar to the following will be displayed:
+```
+/usr/bin/ld: cannot find -lsnopt7
+collect2: error: ld returned 1 exit status
+make: *** [Makefile:137: lib/libsnopt7_c.la] Error 1
+```
+This is normal and will be solved in the coming steps. The command needs to be ran anyways to ensure the correct creation of the `/install-snopt-interface/snopt-interface/lib` directory and of some of the contents in the `/install-snopt-interface/snopt-interface/src` directory.
 
 ### 6. Download the Fortran libraries from the link provided in the email with the license. 
 
@@ -74,7 +69,6 @@ Some amount of time after requesting the license, an email will be sent to the r
  Similarly to Step 5, the commands below are ran insed the `/install-snopt-tutorial/snopt-interface` directory.
 
 ```
-make snopt_c
 make install snopt_c
 ```
 
@@ -117,7 +111,7 @@ SNOPT_LICENSE="/absolute/path/to/snopt7.lic"
 where `/absolute/path/to/snopt7.lic` is the absolute path to the `snopt7.lic` file. Again,  <kbd>Ctrl</kbd> + <kbd>X</kbd>, <kbd>Y</kbd>, <kbd>Enter</kbd> to save and exit. **The computer should be restarted after this step.**
 
 
-7. 
+### 10. 
 ```
 sudo apt-get install libgfortran4
 ```
@@ -128,6 +122,30 @@ sudo apt-get update
 sudo apt-get install libgfortran4
 ```
 
+### 11.
+Change the main.cpp file.
+
 8. Add path to the license to SNOPT_LICENSE
 
 ## Setting up the `conda` environment
+
+
+
+
+
+
+
+## Notes
+Some requirements:
+- A trial version license from https://ccom.ucsd.edu/~optimizers/downloads/
+- `anaconda` or `miniconda`
+- `git`
+- `autoconf`, `build-essential` and `libtool` packages
+- g++ (pre-installed with Ubuntu 20.04)
+- A Fortran compiler, we used gfortran
+- `cmake`
+
+
+Some thoughts:
+-  Add the path with libsnopt7.so to LD_LIBRARY_PATH or to /etc/ld.so.conf.d/ create a file like snopt.conf and write the directory there. Path to directory with file, not path to file. Absolute paths from root /, not from ~
+- Add SNOPT_LICENSE to /etc/environment
